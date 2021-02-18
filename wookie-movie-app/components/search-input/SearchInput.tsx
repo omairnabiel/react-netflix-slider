@@ -1,13 +1,34 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {  faSearch } from "@fortawesome/free-solid-svg-icons"
-import { ChangeEvent, useEffect, useState } from "react"
+import { ChangeEvent, useEffect, useState,useRef } from "react"
+import { useRecoilState } from "recoil"
+import { debounce} from "lodash"
 
+// state atoms
+import { moviesState } from "../../state/atoms/movie"
 
+// service
+import { get } from "../../service/movie.service"
 
 export default function SearchInput() {
     const [value,setValue] = useState<string>("")
+    const [movies, setMovies] = useRecoilState(moviesState)
+    
+    // debounce getMovies, to avoid calling the api on each input
+    const getMoviesDebounced = useRef(debounce(getMovies, 1000)).current
+
+    async function getMovies(searchTerm: string) {
+      setMovies({data: [], loading: true, error: undefined})
+      const data = await get(searchTerm)
+      setMovies({data, loading: false, error: undefined})
+  }
 
     useEffect(() => {
+      if(movies.data.length === 0) {
+        setMovies({data: [], loading: true, error: undefined})
+        getMoviesDebounced(value)
+      }
+    
     }, [value])
 
 
