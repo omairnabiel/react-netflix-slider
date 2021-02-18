@@ -8,7 +8,7 @@ import { debounce} from "lodash"
 import { moviesState } from "../../state/atoms/movie"
 
 // service
-import { get } from "../../service/movie.service"
+import { MovieService } from "../../service/movie.service"
 
 export default function SearchInput() {
     const [value,setValue] = useState<string>("")
@@ -19,16 +19,13 @@ export default function SearchInput() {
 
     async function getMovies(searchTerm: string) {
       setMovies({data: [], loading: true, error: undefined})
-      const data = await get(searchTerm)
+      const data = await MovieService.get(searchTerm)
       setMovies({data, loading: false, error: undefined})
   }
 
     useEffect(() => {
-      if(movies.data.length === 0) {
         setMovies({data: [], loading: true, error: undefined})
         getMoviesDebounced(value)
-      }
-    
     }, [value])
 
 
