@@ -1,0 +1,1 @@
+{"ast":null,"code":"import React from \"react\";\nexport default function NotFound() {\n  return /*#__PURE__*/React.createElement(\"div\", null, \"Not Found 404\");\n}","map":null,"metadata":{},"sourceType":"module"}

@@ -1,0 +1,1 @@
+{"ast":null,"code":"import React from \"react\"; // components\n\nimport SliderWrapper from \"../components/slider/slider-wrapper/SliderWrapper\";\nexport default function Home() {\n  return /*#__PURE__*/React.createElement(\"div\", null, /*#__PURE__*/React.createElement(SliderWrapper, null));\n}","map":null,"metadata":{},"sourceType":"module"}

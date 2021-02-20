@@ -1,0 +1,1 @@
+{"ast":null,"code":"import React from \"react\";\nexport default function Loader() {\n  return /*#__PURE__*/React.createElement(\"div\", {\n    className: \"bg-rose-600 fixed left-1/2 top-1/2 w-full h-full center\"\n  }, \"Loading...\");\n}","map":null,"metadata":{},"sourceType":"module"}

@@ -1,0 +1,1 @@
+{"ast":null,"code":"import React from \"react\";\nexport default function Poster({\n  url\n}) {\n  return /*#__PURE__*/React.createElement(\"img\", {\n    className: \"w-32 h-32 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto\",\n    src: url,\n    alt: \"\",\n    width: \"384\",\n    height: \"512\"\n  });\n}","map":null,"metadata":{},"sourceType":"module"}
