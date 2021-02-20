@@ -27,6 +27,7 @@ export default function Tile({movie, transform}:TileProps) {
         className="box-border h-52 w-80 border-1 duration-500 shadow-xl cursor-pointer" 
         style={transform} 
         onClick={routeToDetail}
+        data-testid="movie-tile"
         >
         <img className="min-w-full max-h-full" src={movie.poster} />
         </div>
