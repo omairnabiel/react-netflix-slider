@@ -1,3 +1,5 @@
+import React from "react"
+
 import { useState,useEffect, CSSProperties } from "react"
 
 // types
@@ -55,7 +57,7 @@ export default function Slider({movies, genre}: SliderProps) {
         if(viewed === Math.floor(window.innerWidth / ITEM_WIDTH)) return
         if(viewed - inWidth < inWidth) {
             setDistance(distance + PADDINGS + (ITEM_WIDTH *(inWidth - (viewed - inWidth))))
-            setRemaining(Math.ceil(movies?.length - (window.innerWidth / ITEM_WIDTH)))
+            setRemaining(Math.ceil(movies.length - (window.innerWidth / ITEM_WIDTH)))
             setViewed(Math.round(window.innerWidth / ITEM_WIDTH))
         }
         else {
@@ -68,13 +70,13 @@ export default function Slider({movies, genre}: SliderProps) {
     <>
     <div className="mb-16 mt-10 overflow-x-hidden">
             
-            <div className="font-mono font-semibold text-xl ml-2">{genre?.split(",").join("/")}</div>
+            <div className="font-mono font-semibold text-xl ml-2">{genre.split(",").join("/")}</div>
             <div className="relative w-full ml-2 mr-2">
             <SliderControl onClick={handlePrev} iconType="previous" position="left"/>
             <SliderControl onClick={handleNext} iconType="next" position="right"/>
                 <div className="grid grid-flow-col no-wrap auto-cols-max overflow-visible">
                 {
-                movies?.length > 0 ?
+                movies.length > 0 ?
                 movies.map((movie: Movie,i: number)=> (<Tile key={movie.id} movie={movie} transform={transform(distance)}/>))
                 :
                 <div>No Movies</div>

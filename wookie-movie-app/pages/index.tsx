@@ -1,3 +1,5 @@
+import React from "react"
+
 // components
 import SliderWrapper from "../components/slider/slider-wrapper/SliderWrapper"
 

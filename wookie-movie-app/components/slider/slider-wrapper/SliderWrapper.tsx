@@ -1,3 +1,5 @@
+import React from "react"
+
 import { useRecoilValue } from "recoil"
 import { groupBy,Dictionary } from "lodash"
 
@@ -21,7 +23,7 @@ export default function SliderWrapper() {
     const children: JSX.Element[] = []
 
     const renderMovies = () => {
-        if(movies.data?.length > 0) {
+        if(movies.data.length > 0) {
             for(const [key,value] of  Object.entries(groupMoviesByGenre(movies.data))) {
              children.push(<Slider key={key} movies={value} genre={key} />)
             }

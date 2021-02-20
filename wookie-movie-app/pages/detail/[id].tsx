@@ -3,14 +3,14 @@ import { useRecoilState, useRecoilValue } from  "recoil"
 import { useRouter } from "next/router"
 
 //  components
-import Poster from "../../../components/poster/Poster"
-import Loader from "../../../components/loader/Loader"
-import MovieDetail from "../../../components/movie-detail/MovieDetail"
+import Poster from "../../components/poster/Poster"
+import Loader from "../../components/loader/Loader"
+import MovieDetail from "../../components/movie-detail/MovieDetail"
 
 
 // state atoms
-import {selectedMovie} from "../../../state/atoms/movie"
-import { moviesState } from "../../../state/atoms/movie"
+import {selectedMovie} from "../../state/atoms/movie"
+import { moviesState } from "../../state/atoms/movie"
 
 export default function Detail() {
     const [movie, setMovie] = useRecoilState(selectedMovie)

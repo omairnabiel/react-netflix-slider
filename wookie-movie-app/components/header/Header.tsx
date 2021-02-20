@@ -1,3 +1,4 @@
+import React from "react"
 // components
 import SearchInput from "../search-input/SearchInput"
 

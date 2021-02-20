@@ -10,6 +10,8 @@ interface MovieDetailProps {
     movie: Movie
 }
 
+import React from "react"
+
 export default function MovieDetail({movie}: MovieDetailProps) {
 
     return (
