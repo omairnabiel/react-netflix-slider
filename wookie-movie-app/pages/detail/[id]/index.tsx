@@ -21,7 +21,6 @@ export default function Detail() {
      * In useEffect as searchBar has already made an api request to get movies, we listen on movies data
      */
     useEffect(() => {
-        console.log("Use Effect")
         if(!movie.data && movies.data) {
             setMovie({data: movies.data.find(m => m.id === router.query.id), loading: false, error: undefined})
         }
